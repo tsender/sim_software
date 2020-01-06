@@ -145,7 +145,7 @@ Eigen::Quaterniond InertialSensors::getNEDQuaterionFromENU(Eigen::Quaterniond qu
    Eigen::Quaterniond quat1 = auv_core::rot3d::rpy2Quat(0, 0, M_PI / 2.0);
 
    // Quaternion difference from quat1 to quatENU
-   Eigen::Quaterniond qDiff = quat1.conjugate() * quatENU; // qDiff = qStart.conjugate() * qEnd
+   Eigen::Quaterniond qDiff = quat1.conjugate() * quatENU; // qDiff = q1.conjugate() * q2
    Eigen::Vector4d angleAxis1 = auv_core::rot3d::quat2AngleAxis(qDiff); // Angle Axis format
 
    Eigen::Vector4d angleAxis2 = Eigen::Vector4d::Zero();
